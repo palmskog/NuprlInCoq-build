@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if [ ! -f "util/universe.v" ]
+then    
+    cp util/universe-type.v util/universe.v
+fi
+
+if [ ! -f "per/universe2.v" ]
+then    
+    cp per/universe2_prop.v per/universe2.v
+fi
+
+if [ ! -f "per/choice.v" ]
+then    
+    cp per/choice-prop.v per/choice.v
+fi
+
+## Configures and calls coqproject.sh (https://github.com/dwoos/coqproject)
+
+## Configuration options for coqproject.sh
+DIRS=(util terms computation cequiv per close rules axiom_choice bar_induction continuity)
+EXTRA=(rules.v)
+NAMESPACE__=""
+source coqproject.sh
