@@ -8,7 +8,7 @@ default: Makefile.coq
 	$(MAKE) -f Makefile.coq rules.vo
 
 quick: Makefile.coq
-	$(MAKE) -f Makefile.coq quick rules.vio
+	$(MAKE) -f Makefile.coq rules.vio
 
 Makefile.coq: _CoqProject
 	coq_makefile -f _CoqProject -o Makefile.coq
